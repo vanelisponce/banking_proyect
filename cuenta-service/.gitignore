@@ -1,25 +1,92 @@
-HELP.md
+# Maven
 target/
-.mvn/wrapper/maven-wrapper.jar
+!.mvn/wrapper/maven-wrapper.jar
 !**/src/main/**/target/
 !**/src/test/**/target/
+pom.xml.tag
+pom.xml.releaseBackup
+pom.xml.versionsBackup
+pom.xml.next
+release.properties
+dependency-reduced-pom.xml
+buildNumber.properties
+.mvn/timing.properties
+.mvn/wrapper/maven-wrapper.properties
 
-### STS ###
-.apt_generated
-.classpath
-.factorypath
+# Gradle
+.gradle
+build/
+!gradle/wrapper/gradle-wrapper.jar
+!**/src/main/**/build/
+!**/src/test/**/build/
+
+# Spring Boot
+*.jar
+*.war
+*.nar
+*.ear
+*.zip
+*.tar.gz
+*.rar
+
+# Application logs
+logs/
+*.log
+application*.log
+spring.log
+
+# JVM crash logs
+hs_err_pid*
+replay_pid*
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+desktop.ini
+
+# IDE - Eclipse
+.metadata
+bin/
+tmp/
+*.tmp
+*.bak
+*.swp
+*~.nib
+local.properties
+.settings/
+.loadpath
+.recommenders
 .project
-.settings
+.externalToolBuilders/
+*.launch
+.pydevproject
+.cproject
+.autotools
+.factorypath
+.buildpath
+.target
+.tern-project
+.texlipse
 .springBeans
-.sts4-cache
+.recommenders/
+.apt_generated/
+.apt_generated_test/
 
-### IntelliJ IDEA ###
-.idea
+# IDE - IntelliJ IDEA
+.idea/
 *.iws
 *.iml
 *.ipr
+out/
+.idea_modules/
+atlassian-ide-plugin.xml
 
-### NetBeans ###
+# IDE - NetBeans
 /nbproject/private/
 /nbbuild/
 /dist/
@@ -29,5 +96,150 @@ build/
 !**/src/main/**/build/
 !**/src/test/**/build/
 
-### VS Code ###
+# IDE - VS Code
 .vscode/
+.history/
+*.code-workspace
+
+# IDE - Sublime Text
+*.sublime-project
+*.sublime-workspace
+
+# Database
+*.db
+*.sqlite
+*.sqlite3
+*.h2.db
+*.trace.db
+*.lock.db
+
+# Docker
+.docker/
+*.dockerignore
+
+# Environment variables
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+application-local.yml
+application-local.properties
+application-secrets.yml
+
+# MySQL dumps
+*.sql.gz
+*.sql.bz2
+dump.sql
+
+# RabbitMQ
+rabbitmq-data/
+
+# Microservices specific
+/cliente-service/logs/
+/cuenta-service/logs/
+/config-server/logs/
+/eureka-server/logs/
+/gateway-service/logs/
+
+# Process IDs for scripts
+*.pid
+
+# Coverage reports
+jacoco.exec
+.jacoco/
+coverage/
+
+# Test results
+TEST-*.xml
+target/surefire-reports/
+target/failsafe-reports/
+
+# Monitoring and metrics
+micrometer/
+actuator/
+
+# Security sensitive files
+keystore.jks
+truststore.jks
+*.p12
+*.key
+*.pem
+*.crt
+private.key
+public.key
+
+# Temporary files
+*.tmp
+*.temp
+temp/
+tmp/
+
+# Backup files
+*.backup
+*.bkp
+*.old
+
+# Node.js (if using for frontend)
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Python (if using for scripts)
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Terraform (if using for infrastructure)
+*.tfstate
+*.tfstate.*
+.terraform/
+.terraform.lock.hcl
+
+# Kubernetes
+k8s-secrets/
+*.kubeconfig
+
+# AWS
+.aws/
+aws-config/
+
+# Spring Boot DevTools
+.spring-boot-devtools.properties
+
+# Cache directories
+.cache/
+cache/
+
+# JProfiler
+*.jprofile
+
+# YourKit
+*.yjprofile
+
+# JMeter
+*.jtl
+*.jmx.log
+
+# Arquillian
+arquillian.xml
+
+# Banking specific sensitive data
+customer-data/
+transaction-logs/
+sensitive-reports/
+financial-data/
+audit-logs/
+
+# Application specific
+uploads/
+downloads/
+reports/
+exports/
+imports/
+
+# Documentation builds
+docs/build/
+site/
