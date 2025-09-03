@@ -3,7 +3,7 @@
 		"_postman_id": "67892b69-46ca-47e5-bc83-9b12a23c4af1",
 		"name": "Banking Microservices API",
 		"description": "Colección de pruebas para los microservicios de banking",
-		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
 		"_exporter_id": "7940514"
 	},
 	"item": [
@@ -22,20 +22,9 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n  \"nombre\": \"Jose Lema\",\n  \"genero\": \"M\",\n  \"edad\": 30,\n  \"identificacion\": \"1234567890\",\n  \"direccion\": \"Otavalo sn y principal\",\n  \"telefono\": \"098254785\",\n  \"clienteId\": 1,\n  \"contraseña\": \"1234\"\n}"
+							"raw": "{\n  \"nombre\": \"Jose Lema\",\n  \"genero\": \"M\",\n  \"edad\": 30,\n  \"identificacion\": \"1234567890\",\n  \"direccion\": \"Otavalo sn y principal\",\n  \"telefono\": \"098254785\",\n  \"contraseña\": \"1234\"\n}"
 						},
-						"url": {
-							"raw": "http://localhost:8081/api/clientes",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "8081",
-							"path": [
-								"api",
-								"clientes"
-							]
-						}
+						"url": "http://localhost:8081/api/clientes"
 					},
 					"response": []
 				},
@@ -44,19 +33,7 @@
 					"request": {
 						"method": "DELETE",
 						"header": [],
-						"url": {
-							"raw": "http://localhost:8081/api/clientes/1",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "8081",
-							"path": [
-								"api",
-								"clientes",
-								"1"
-							]
-						}
+						"url": "http://localhost:8081/api/clientes/1"
 					},
 					"response": []
 				},
@@ -65,18 +42,7 @@
 					"request": {
 						"method": "GET",
 						"header": [],
-						"url": {
-							"raw": "http://localhost:8081/api/clientes",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "8081",
-							"path": [
-								"api",
-								"clientes"
-							]
-						}
+						"url": "http://localhost:8081/api/clientes"
 					},
 					"response": []
 				},
@@ -85,19 +51,7 @@
 					"request": {
 						"method": "GET",
 						"header": [],
-						"url": {
-							"raw": "http://localhost:8081/api/clientes/1",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "8081",
-							"path": [
-								"api",
-								"clientes",
-								"1"
-							]
-						}
+						"url": "http://localhost:8081/api/clientes/1"
 					},
 					"response": []
 				},
@@ -118,19 +72,7 @@
 								}
 							}
 						},
-						"url": {
-							"raw": "http://localhost:8081/api/clientes/1",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "8081",
-							"path": [
-								"api",
-								"clientes",
-								"1"
-							]
-						}
+						"url": "http://localhost:8081/api/clientes/1"
 					},
 					"response": []
 				}
@@ -153,18 +95,7 @@
 							"mode": "raw",
 							"raw": "{\n  \"numeroCuenta\": \"478758\",\n  \"tipoCuenta\": \"Ahorro\",\n  \"saldoInicial\": 2000.00,\n  \"estado\": true,\n  \"clienteId\": 1\n}"
 						},
-						"url": {
-							"raw": "http://localhost:8082/api/cuentas",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "8082",
-							"path": [
-								"api",
-								"cuentas"
-							]
-						}
+						"url": "http://localhost:8082/api/cuentas"
 					},
 					"response": [
 						{
@@ -181,18 +112,7 @@
 									"mode": "raw",
 									"raw": "{\n  \"numeroCuenta\": \"478758\",\n  \"tipoCuenta\": \"Ahorro\",\n  \"saldoInicial\": 2000.00,\n  \"clienteId\": 1\n}"
 								},
-								"url": {
-									"raw": "http://localhost:8082/api/cuentas",
-									"protocol": "http",
-									"host": [
-										"localhost"
-									],
-									"port": "8082",
-									"path": [
-										"api",
-										"cuentas"
-									]
-								}
+								"url": "http://localhost:8082/api/cuentas"
 							},
 							"status": "Created",
 							"code": 201,
@@ -250,18 +170,7 @@
 							"mode": "raw",
 							"raw": "{\n  \"numeroCuenta\": \"478758\",\n  \"valor\": -575.00\n}"
 						},
-						"url": {
-							"raw": "http://localhost:8082/api/movimientos",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "8082",
-							"path": [
-								"api",
-								"movimientos"
-							]
-						}
+						"url": "http://localhost:8082/api/movimientos"
 					},
 					"response": []
 				},
@@ -279,18 +188,7 @@
 							"mode": "raw",
 							"raw": "{\n  \"numeroCuenta\": \"225487\",\n  \"valor\": 600.00\n}"
 						},
-						"url": {
-							"raw": "http://localhost:8082/api/movimientos",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "8082",
-							"path": [
-								"api",
-								"movimientos"
-							]
-						}
+						"url": "http://localhost:8082/api/movimientos"
 					},
 					"response": [
 						{
@@ -307,18 +205,7 @@
 									"mode": "raw",
 									"raw": "{\n  \"numeroCuenta\": \"495878\",\n  \"valor\": 150.00\n}"
 								},
-								"url": {
-									"raw": "http://localhost:8082/api/movimientos",
-									"protocol": "http",
-									"host": [
-										"localhost"
-									],
-									"port": "8082",
-									"path": [
-										"api",
-										"movimientos"
-									]
-								}
+								"url": "http://localhost:8082/api/movimientos"
 							},
 							"status": "Created",
 							"code": 201,
@@ -477,19 +364,7 @@
 						},
 						"method": "DELETE",
 						"header": [],
-						"url": {
-							"raw": "http://localhost:8082/api/cuentas/1",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "8082",
-							"path": [
-								"api",
-								"cuentas",
-								"1"
-							]
-						}
+						"url": "http://localhost:8082/api/cuentas/1"
 					},
 					"response": []
 				},
@@ -510,19 +385,7 @@
 								}
 							}
 						},
-						"url": {
-							"raw": "http://localhost:8082/api/cuentas/2",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "8082",
-							"path": [
-								"api",
-								"cuentas",
-								"2"
-							]
-						}
+						"url": "http://localhost:8082/api/cuentas/2"
 					},
 					"response": []
 				},
@@ -534,20 +397,7 @@
 						},
 						"method": "GET",
 						"header": [],
-						"url": {
-							"raw": "http://localhost:8082/api/cuentas/cliente/1",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "8082",
-							"path": [
-								"api",
-								"cuentas",
-								"cliente",
-								"1"
-							]
-						}
+						"url": "http://localhost:8082/api/cuentas/cliente/1"
 					},
 					"response": [
 						{
@@ -555,24 +405,11 @@
 							"originalRequest": {
 								"method": "GET",
 								"header": [],
-								"url": {
-									"raw": "http://localhost:8082/api/cuentas/cliente/1",
-									"protocol": "http",
-									"host": [
-										"localhost"
-									],
-									"port": "8082",
-									"path": [
-										"api",
-										"cuentas",
-										"cliente",
-										"1"
-									]
-								}
+								"url": "http://localhost:8082/api/cuentas/cliente/1"
 							},
 							"status": "OK",
 							"code": 200,
-							"_postman_previewlanguage": "",
+							"_postman_previewlanguage": null,
 							"header": [
 								{
 									"key": "Vary",
