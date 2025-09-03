@@ -107,7 +107,7 @@ java -jar target/cuenta-service-0.0.1-SNAPSHOT.jar &
 | Cuenta Service | 8082 | http://localhost:8082 | Gestión de cuentas |
 | MySQL | 3306 | localhost:3306 | Base de datos |
 | RabbitMQ | 5672 | localhost:5672 | Message broker |
-| RabbitMQ Management | 15672 | http://localhost:15672 | Panel admin (admin/admin123) |
+| RabbitMQ Management | 15672 | http://localhost:15672 | Panel admin (guest/guest) |
 
 ## 🔍 Verificación del Sistema
 
@@ -123,7 +123,7 @@ curl http://localhost:8082/actuator/health  # Cuenta Service
 docker exec -it banking_mysql mysql -u root -prootpassword
 
 # Acceder a RabbitMQ Management
-# http://localhost:15672 (admin/admin123)
+# http://localhost:15672 (guest/guest)
 ```
 
 ## 📁 Estructura del Proyecto
