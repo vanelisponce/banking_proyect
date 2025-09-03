@@ -44,16 +44,15 @@ public class ClienteService {
     }
 
     public ClienteDTO crearCliente(CrearClienteDTO crearClienteDTO) {
-        // Validar si ya existe el clienteId
-        if (clienteRepository.existsByClienteId(crearClienteDTO.getClienteId())) {
-            throw new IllegalArgumentException("Ya existe un cliente con ese ID");
-        }
+        // GENERAR AUTOMÁTICAMENTE EL CLIENTE ID
+        Long nuevoClienteId = generateNextClienteId();
         
-        // Validar si ya existe la identificación
+        // VALIDAR SI YA EXISTE LA IDENTIFICACIÓN (SOLO UNA VEZ)
         if (clienteRepository.existsByIdentificacion(crearClienteDTO.getIdentificacion())) {
             throw new IllegalArgumentException("Ya existe un cliente con esa identificación");
         }
 
+        // CREAR Y CONFIGURAR EL CLIENTE
         Cliente cliente = new Cliente();
         cliente.setNombre(crearClienteDTO.getNombre());
         cliente.setGenero(crearClienteDTO.getGenero());
@@ -61,16 +60,29 @@ public class ClienteService {
         cliente.setIdentificacion(crearClienteDTO.getIdentificacion());
         cliente.setDireccion(crearClienteDTO.getDireccion());
         cliente.setTelefono(crearClienteDTO.getTelefono());
-        cliente.setClienteId(crearClienteDTO.getClienteId());
+        cliente.setClienteId(nuevoClienteId);
         cliente.setContraseña(crearClienteDTO.getContraseña());
         cliente.setEstado(true);
 
+        // GUARDAR EL CLIENTE
         Cliente clienteGuardado = clienteRepository.save(cliente);
         
-        // Publicar evento de cliente creado
+        // PUBLICAR EVENTO DE CLIENTE CREADO
         eventPublisher.publishClienteCreado(clienteGuardado);
         
         return modelMapper.map(clienteGuardado, ClienteDTO.class);
+    }
+
+    // MÉTODO PARA GENERAR EL PRÓXIMO ID
+    private Long generateNextClienteId() {
+        try {
+            Long nextId = clienteRepository.getNextClienteId();
+            return nextId != null ? nextId : 1L;
+        } catch (Exception e) {
+            // Si hay error con la query, usar método alternativo
+            Long lastId = clienteRepository.getLastClienteId();
+            return lastId != null ? lastId + 1 : 1L;
+        }
     }
 
     public ClienteDTO actualizarCliente(Long id, CrearClienteDTO clienteDTO) {

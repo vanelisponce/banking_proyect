@@ -26,13 +26,14 @@ public class CrearClienteDTO {
     @Size(max = 15, message = "El teléfono no puede exceder 15 caracteres")
     private String telefono;
 
-    @NotNull(message = "El clienteId es obligatorio")
-    private Long clienteId;
+    // ❌ ELIMINAR ESTE CAMPO - No pedimos clienteId
+    // @NotNull(message = "El clienteId es obligatorio")
+    // private Long clienteId;
 
     @NotBlank(message = "La contraseña es obligatoria")
     private String contraseña;
 
-    // Getters y Setters
+    // Getters y Setters (ELIMINAR getters/setters de clienteId)
     public String getNombre() { return nombre; }
     public void setNombre(String nombre) { this.nombre = nombre; }
     
@@ -50,9 +51,6 @@ public class CrearClienteDTO {
     
     public String getTelefono() { return telefono; }
     public void setTelefono(String telefono) { this.telefono = telefono; }
-    
-    public Long getClienteId() { return clienteId; }
-    public void setClienteId(Long clienteId) { this.clienteId = clienteId; }
     
     public String getContraseña() { return contraseña; }
     public void setContraseña(String contraseña) { this.contraseña = contraseña; }

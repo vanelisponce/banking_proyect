@@ -20,4 +20,10 @@ public interface ClienteRepository extends JpaRepository<Cliente, Long> {
     
     boolean existsByClienteId(Long clienteId);
     boolean existsByIdentificacion(String identificacion);
+
+    @Query("SELECT COALESCE(MAX(c.clienteId), 0) + 1 FROM Cliente c")
+    Long getNextClienteId();
+
+    @Query("SELECT MAX(c.clienteId) FROM Cliente c")
+    Long getLastClienteId();
 }
