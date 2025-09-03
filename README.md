@@ -57,7 +57,7 @@ Si prefieres configurar paso a paso:
 
 ```bash
 # 1. Levantar infraestructura (MySQL + RabbitMQ)
-docker-compose -f docker-compose.infrastructure.yml up -d
+docker-compose -f docker-compose.yml up -d
 
 # 2. Compilar cliente-service
 cd cliente-service
