@@ -1,35 +1,41 @@
 package com.banking.cliente.dto;
 
+import io.swagger.v3.oas.annotations.media.Schema;
+
 import jakarta.validation.constraints.*;
 
+@Schema(description = "DTO para crear un nuevo cliente")
 public class CrearClienteDTO {
+    @Schema(description = "Nombre completo del cliente", example = "Jose Lema", required = true)
     @NotBlank(message = "El nombre es obligatorio")
     @Size(max = 100, message = "El nombre no puede exceder 100 caracteres")
     private String nombre;
 
+    @Schema(description = "Género del cliente", example = "M", allowableValues = {"M", "F"}, required = true)
     @NotBlank(message = "El género es obligatorio")
     @Size(max = 1, message = "El género debe ser un carácter")
     private String genero;
 
+    @Schema(description = "Edad del cliente", example = "30", minimum = "18", maximum = "120", required = true)
     @NotNull(message = "La edad es obligatoria")
     @Min(value = 18, message = "La edad mínima es 18 años")
     @Max(value = 120, message = "La edad máxima es 120 años")
     private Integer edad;
 
+    @Schema(description = "Número de identificación único", example = "1234567890", required = true)
     @NotBlank(message = "La identificación es obligatoria")
     @Size(max = 20, message = "La identificación no puede exceder 20 caracteres")
     private String identificacion;
 
+    @Schema(description = "Dirección de residencia", example = "Otavalo sn y principal")
     @Size(max = 200, message = "La dirección no puede exceder 200 caracteres")
     private String direccion;
 
+    @Schema(description = "Número de teléfono", example = "098254785")
     @Size(max = 15, message = "El teléfono no puede exceder 15 caracteres")
     private String telefono;
 
-    // ❌ ELIMINAR ESTE CAMPO - No pedimos clienteId
-    // @NotNull(message = "El clienteId es obligatorio")
-    // private Long clienteId;
-
+    @Schema(description = "Contraseña del cliente", example = "1234", required = true)
     @NotBlank(message = "La contraseña es obligatoria")
     private String contraseña;
 
