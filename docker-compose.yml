@@ -26,6 +26,8 @@ services:
   cliente-service:
     build:
       context: ./cliente-service
+      args:
+        BUILD_DATE: ${BUILD_DATE:-$(date +%s)}
       dockerfile: Dockerfile
     ports:
       - "8081:8081"

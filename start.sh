@@ -1,4 +1,6 @@
 #!/bin/bash
+echo "Limpiando chache..."
+docker-compose build --no-cache
 echo "Iniciando servicios..."
 docker-compose up -d
 echo "Servicios iniciados!"
